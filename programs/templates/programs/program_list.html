@@ -1,0 +1,10 @@
+{% extends "base_programs.html" %}
+
+{% block content %}
+    <h2>프로그램 목록</h2>
+    <ul>
+        {% for program in object_list %}
+            <li><a href="{% url 'programs:program_detail' program.id %}">{{ program.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

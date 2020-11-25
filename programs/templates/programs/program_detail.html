@@ -1,0 +1,20 @@
+{% extends "base_programs.html" %}
+
+{% block content %}
+
+<h1 style="color:#8a0017">{{ object.title }}</h1>
+<br>
+<li>주최: {{ object.publisher }}</li>
+</li>
+<br>
+<br>
+<li> {{ program.text|linebreaksbr }}</li>
+<br>
+<li>주최 장소:
+{% for organ in object.organs.all %}
+  {{ organ }}
+  {% if not forloop.last %},{% else %}{% endif %}
+{% endfor %}
+<li>Publication date: {{ object.publication_date }}</li>
+
+{% endblock content %}

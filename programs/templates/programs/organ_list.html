@@ -1,0 +1,10 @@
+{% extends "base_programs.html" %}
+
+{% block content %}
+    <h2>주최 기관 목록</h2>
+    <ul>
+        {% for organ in object_list %}
+            <li><a href="{% url 'programs:organ_detail' organ.id %}">{{ organ.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

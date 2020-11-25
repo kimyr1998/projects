@@ -1,0 +1,12 @@
+{% extends "base_programs.html" %}
+
+{% block content %}
+    <h2>교내 행사 관련 안내</h2>
+    <ul>
+        {% for modelname in model_list %}
+{% with "programs:"|add:modelname|lower|add:"_list" as urlvar %}
+            <li><a href="{% url urlvar %}">{{ modelname }}</a></li>
+{% endwith %}
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h2 style="color:#8a0017">School Hex-c Programs Information</h2>
+<br>
+    <ul>
+        {% for key, value in verbose_dict.items %}
+            <li><a href="{% url key|add:':index' %}">{{ value }}</a></li>
+        <br>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

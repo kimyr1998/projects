@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<div class="title">
+<head>
+    <link rel="stylesheet" href="{% static 'admin/css/base.css' %}" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <title>{% block title %}School Hex-C Program Site{% endblock %}</title>
+
+</head>
+</div>
+<body>
+    <div id="sidebar">
+        <nav class="navbar navbar-expand-sm bg-info navbar-dark">
+        {% block sidebar %}
+        <ul>
+            <br>
+            <a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-home"> Home </span></a>&emsp;
+            <a href="/admin/" class="top-menu"><span class="glyphicon glyphicon-log-in"> Admin_Login </span></a>
+        </ul>
+        {% endblock %}
+        </nav>
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

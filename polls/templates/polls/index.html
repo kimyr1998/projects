@@ -1,0 +1,17 @@
+{% extends "base_polls.html" %}
+
+{% block content %}
+
+<h2>프로그램 참여 수요 조사 목록</h2>
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>진행되는 투표가 없습니다.</p>
+{% endif %}
+
+{% endblock %}
